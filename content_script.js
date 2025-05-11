@@ -28,12 +28,27 @@
     return false;
   }
 
+  function isMarkup(node) {
+    let el = node.parentElement;
+    while (el)  {
+          let el = node.parentElement;
+    while (el) {
+      if (el.getAttribute && el.getAttribute('class') && /markup/.test(el.getAttribute('class'))) {
+        return true;
+      }
+      el = el.parentElement;
+    }
+    return false;
+    }
+  }
+
   // Utility: replace text nodes (UI only), skipping message content and textAreas
   function translateNode(node) {
     if (
       node.nodeType === Node.TEXT_NODE &&
       !isMessageContent(node) &&
-      !isInTextArea(node)
+      !isInTextArea(node) &&
+      !isMarkup(node)
     ) {
       const txt = node.nodeValue.trim();
       if (TRANSLATIONS[txt]) {
