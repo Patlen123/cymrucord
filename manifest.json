@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Discord Welsh Translator",
+  "version": "1.0",
+  "description": "Automatically translates Discord UI into Welsh using a local dictionary.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.discord.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.discord.com/*"],
+      "js": ["translations.js", "content_script.js"]
+    }
+  ]
+}
