@@ -18,4 +18,6 @@ const TRANSLATIONS = {
   "Turn On Microphone": "Galluogi Meicroffon",
   "Turn Off Microphone": "Analluogi Meicroffon",
   "Add a Server": "Ychwanegu Gweinydd",
+  "About Me": "Amdanaf",
+  "Member Since": "Aelod Ers"
 };
