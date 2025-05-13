@@ -1,6 +1,9 @@
+// File: content_script.js
+
 (function() {
-  if (typeof TRANSLATIONS !== 'object') {
-    console.error('Translation data not loaded.');
+  // Ensure translate function is available
+  if (typeof window.translate !== 'function') {
+    console.error('Translate function not loaded.');
     return;
   }
 
@@ -28,10 +31,9 @@
     return false;
   }
 
+  // Utility: check if element is within a class containing "markup"
   function isMarkup(node) {
     let el = node.parentElement;
-    while (el)  {
-          let el = node.parentElement;
     while (el) {
       if (el.getAttribute && el.getAttribute('class') && /markup/.test(el.getAttribute('class'))) {
         return true;
@@ -39,7 +41,6 @@
       el = el.parentElement;
     }
     return false;
-    }
   }
 
   // Utility: replace text nodes (UI only), skipping message content and textAreas
@@ -50,9 +51,22 @@
       !isInTextArea(node) &&
       !isMarkup(node)
     ) {
-      const txt = node.nodeValue.trim();
-      if (TRANSLATIONS[txt]) {
-        node.nodeValue = node.nodeValue.replace(txt, TRANSLATIONS[txt]);
+      const raw = node.nodeValue.trim();
+      const translated = window.translate(raw);
+      if (translated && translated !== raw) {
+        node.nodeValue = node.nodeValue.replace(raw, translated);
+      }
+    }
+  }
+
+  // Translate existing placeholders (for inputs and textareas)
+  function translatePlaceholders(root) {
+    const els = root.querySelectorAll('input[placeholder], textarea[placeholder]');
+    for (const el of els) {
+      const ph = el.getAttribute('placeholder');
+      const translated = window.translate(ph);
+      if (translated && translated !== ph) {
+        el.setAttribute('placeholder', translated);
       }
     }
   }
@@ -69,25 +83,38 @@
     while (n = walker.nextNode()) {
       translateNode(n);
     }
+    translatePlaceholders(root);
   }
 
-  // Observe for dynamic changes (UI only)
+  // Combined MutationObserver for text nodes and placeholder attributes
   const observer = new MutationObserver(mutations => {
     for (const m of mutations) {
-      for (const node of m.addedNodes) {
-        if (node.nodeType === Node.TEXT_NODE) {
-          translateNode(node);
-        } else if (node.nodeType === Node.ELEMENT_NODE) {
-          walkAndTranslate(node);
+      if (m.type === 'childList') {
+        for (const node of m.addedNodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            translateNode(node);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            walkAndTranslate(node);
+          }
+        }
+      }
+      else if (m.type === 'attributes' && m.attributeName === 'placeholder') {
+        const el = m.target;
+        const ph = el.getAttribute('placeholder');
+        const translated = window.translate(ph);
+        if (translated && translated !== ph) {
+          el.setAttribute('placeholder', translated);
         }
       }
     }
   });
 
-  // Start observer on body
+  // Start observing body for child additions and placeholder attribute changes
   observer.observe(document.body, {
     childList: true,
-    subtree: true
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['placeholder']
   });
 
   // Initial pass
