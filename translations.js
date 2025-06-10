@@ -105,7 +105,7 @@ const STATIC_TRANSLATIONS = {
 
 // 2) Dynamic translations (wildcards) as an array of [pattern, replacer]
 const DYNAMIC_TRANSLATIONS = [
-  [/^Online\s*–\s*(\d+)$/, (_, num) => `Ar-Lein – ${num}`],
+  [/^Online\s*–\s*(\d+)$/, (_, num) => `Ar-lein – ${num}`],
   [/^Today at (\d{2}:\d{2})$/, (_, time) => `Heddiw ar ${time}`],
 
   // Dates
