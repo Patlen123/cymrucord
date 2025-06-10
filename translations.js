@@ -9,8 +9,10 @@ const STATIC_TRANSLATIONS = {
   "Direct Messages": "Negeseuon Cyfeiriadol",
   "Find or start a conversation": "Ffeindio neu ddechrau sgwrs",
   "Online": "Ar-lein",
+  "Offline": "All-lein",
   "All": "Pawb",
   "Add Friend": "Ychwanegu Ffrind",
+  "All Friends": "Pawb yn Ffrindiau",
   "New Group DM": "Neges Grŵp Newydd",
   "Add a Server": "Ychwanegu Gweinydd",
   "About Me": "Amdanaf",
@@ -23,14 +25,31 @@ const STATIC_TRANSLATIONS = {
   "Discount": "Ostyngiad",
   "Active Now": "Actif Rŵan",
   "Playing": "Yn chwarae ",
+  "More": "Mwy",
+  "Message": "Anfonwch Neges",
+  "Start Voice Call": "Dechrau Galwad Llais",
+  "Start Video Call": "Dechrau Galwad Fideo",
+  "Remove Friend": "Tynnu Ffrind",
+  "Pinned Messages": "Negeseuon Wedi'i Binio",
+  "Add Friends to DM": "Ychwanegu Ffrindiau i Neges Breifat",
+  "Show User Profile": "Dangos Proffil Defnyddiwr",
+  "Hide User Profile": "Cuddio Proffil Defnyddiwr",
 
   // Search Options
   "Search Options": "Opsinau Chwilio",
   "from:": "gan: ",
   "mentions:": "crybwyll: ",
-  "has:": "wedi: ",
+  "has:": "gyda: ",
+  "before:": "cyn: ",
+  "during:": "tra: ",
+  "after:": "ar ốl: ",
+  "pinned:": "wedi’i binio: ",
   "user": "defnyddiwr",
   "link, embed or file": "dolen, menosod neu ffeil",
+  "specific date": "ddyddiad penodol",
+  "true or false": "gwir neu ffug",
+  "Learn More": "Dysgu Mwy",
+
 
   // User Box Strings
   "User Settings": "Gosodiadau Defnyddiwr",
@@ -43,6 +62,16 @@ const STATIC_TRANSLATIONS = {
   "Idle": "Segur",
   "You will not receive desktop notifications": "Ni fyddwch yn derbyn hysbysiadau bwrdd gwaith",
   "You will appear offline": "Ni fyddwch yn ymddangos all-lein",
+  "Mute": "Tewi",
+  "Unmute": "Dad-dewi",
+  "Copy Username": "Copiwch Enw Defnyddiwr",
+  "Pronouns": "Rhagenwau",
+  "Amp up your profile": "Gwella Eich Proffil",
+  "Get Nitro": "Cael Nitro",
+  "Edit Profile": "Golygwch Proffil",
+  "Switch Accounts": "Newid Cyfrif",
+  "Copy User ID": "Copiwch ID Defnyddiwr",
+  "Manage Accounts": "Rheoli Cyfrifau",
 
   // Settings Strings
   //    My Account
@@ -55,8 +84,22 @@ const STATIC_TRANSLATIONS = {
   "Phone Number":"Rhif Ffôn",
   "Reveal": "Datgelu",
 
-  //    Coonections
+  //    Connections
   "Connections": "Cysylltiadau",
+
+  //    Server Creator
+  "Create Your Server": "Creu Dy Weinydd",
+  "Your server is where you and your friends hang out. Make yours and start talking.": "Eich gweinydd yw lle wyt ti'n a ti ffrindiau'n cwrdd. Creu eich rŵan!",
+  "Create My Own": "Creu Fy Un I",
+  "Gaming": "Gemau",
+  "Study Group": "Grŵp Astudio",
+  "School Club": "Clwb Ysgol",
+  "Local Community": "Cymuned Leol",
+  "Artists & Creators": "Arlunwyr a Creawyr",
+  "Already have an invite?": "Oes gen ti wahoddiad?",
+  "Join a Server": "Ymunwch â Weinydd"
+  
+  
 
 };
 
