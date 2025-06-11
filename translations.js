@@ -2,6 +2,10 @@
 
 // 1) Static translations (exact matches) in an object for O(1) lookup
 const STATIC_TRANSLATIONS = {
+  // Top Bar
+  "Inbox": "Mewnflwch",
+  "Help": "Helpu (Saesneg)",
+  
   // DM Screen Strings
   "Friends": "Ffrindiau",
   "Search": "Chwilio",
@@ -12,7 +16,6 @@ const STATIC_TRANSLATIONS = {
   "Offline": "All-lein",
   "All": "Pawb",
   "Add Friend": "Ychwanegu Ffrind",
-  "All Friends": "Pawb yn fy Ffrindiau",
   "New Group DM": "Neges Grŵp Newydd",
   "Add a Server": "Ychwanegu Gweinydd",
   "About Me": "Amdanaf",
@@ -31,9 +34,23 @@ const STATIC_TRANSLATIONS = {
   "Start Video Call": "Dechrau Galwad Fideo",
   "Remove Friend": "Tynnu Ffrind",
   "Pinned Messages": "Negeseuon Wedi'u Pinio",
-  "Add Friends to DM": "Ychwanegu Ffrindiau i Neges Breifat",
+  "Add Friends to DM": "Ychwanegu Ffrindiau i DM",
   "Show User Profile": "Dangos Proffil Defnyddiwr",
   "Hide User Profile": "Cuddio Proffil Defnyddiwr",
+  "You can add friends with their Discord usernames.": "Ti fedri ychwanegu ffrindiau gan ddefnyddio eu henwau defnyddwyr ar Discord",
+  "Send Friend Request": "Anfon Cais Ffrind",
+  "Other Places to Make Friends": "Lleoedd Arall i Gwneud Ffrindiau",
+  "Don’t have a username on hand? Check out our list of public servers that includes everything from gaming to cooking, music, anime and more.": "Does gen ti ddim enw defniddiwr i ddefnyddio? Edrychwch ar ein rhestr o weinyddion cyhoeddus sy’n cynnwys popeth o gemau i goginio, cerddoriaeth, anime a mwy.",
+  "Explore Discoverable Servers": "Archwilio Gweinyddion Darganfyddadwy",
+  "Discover": "Archwilio",
+  "Download Apps": "Wedi Lawrlwytho Apiau",
+
+  // Download Apps Box
+  "Get Discord at Home": "Cael Discord Adre",
+  "Or on the go": "Neu wrth fynd",
+  "Download": "Lawrlwytho",
+  "Want some of that fresh off-the-vine Discord?": "Wyt ti isio'r fersiwn beta Discord?",
+  "Get the public test build": "Cael fersiwn prawf cyhoeddus Discord.",
 
   // Search Options
   "Search Options": "Dewisiadau Chwilio",
@@ -55,6 +72,7 @@ const STATIC_TRANSLATIONS = {
   "User Settings": "Gosodiadau Defnyddiwr",
   "Voice Connected": "Llais wedi'i gysylltu",
   "Deafen": "Distewi",
+  "Undeafen": "Dad-distewi",
   "Turn On Microphone": "Galluogi Meicroffon",
   "Turn Off Microphone": "Analluogi Meicroffon",
   "Invisible": "Anweledig",
@@ -62,8 +80,8 @@ const STATIC_TRANSLATIONS = {
   "Idle": "Segur",
   "You will not receive desktop notifications": "Ni fyddwch yn derbyn hysbysiadau bwrdd gwaith",
   "You will appear offline": "Ni fyddwch yn ymddangos all-lein",
-  "Mute": "Tewi",
-  "Unmute": "Dad-dewi",
+  "Mute": "Mud",
+  "Unmute": "Dad-fud",
   "Copy Username": "Copïo Enw Defnyddiwr",
   "Pronouns": "Rhagenwau",
   "Amp up your profile": "Gwella Eich Proffil",
@@ -72,6 +90,13 @@ const STATIC_TRANSLATIONS = {
   "Switch Accounts": "Newid Cyfrifau",
   "Copy User ID": "Copïo ID Defnyddiwr",
   "Manage Accounts": "Rheoli Cyfrifau",
+
+  // Discover
+  "Apps": "Apiau",
+  "Servers": "Gweinyddol",
+  "Home": "Cartref",
+  "Music": "Cerddoriaeth",
+  "Quests": "Tasgau (Saesneg)",
 
   // Settings Strings
   //    My Account
@@ -88,7 +113,7 @@ const STATIC_TRANSLATIONS = {
   "Connections": "Cysylltiadau",
 
   //    Server Creator
-  "Create Your Server": "Creu Eich Weinydd",
+  "Create Your Server": "Creu Eich Gweinydd",
   "Your server is where you and your friends hang out. Make yours and start talking.": "Eich gweinydd yw lle wyt ti'n a ti ffrindiau'n cwrdd. Creu eich rŵan!",
   "Create My Own": "Creu Fy Un",
   "Gaming": "Gemau",
@@ -97,15 +122,18 @@ const STATIC_TRANSLATIONS = {
   "Local Community": "Cymuned Leol",
   "Artists & Creators": "Arlunwyr a Creawyr",
   "Already have an invite?": "Oes gen ti wahoddiad?",
-  "Join a Server": "Ymunwch â Weinydd"
-  
-  
+  "Join a Server": "Ymuno â Gweinydd",
+  "Enter an invite below to join an existing server": "Teipio gwahoddiad isod i ymuno â gweinydd presennol",
+  "Invites should look like": "Dylai Gwahoddiadau Edrych Fel Hyn",
+  "Don't have an invite?": "Does gen ti ddim gwahoddiad?",
+  "Invite link": "Dolen gwahoddiad"
 
 };
 
 // 2) Dynamic translations (wildcards) as an array of [pattern, replacer]
 const DYNAMIC_TRANSLATIONS = [
   [/^Online\s*–\s*(\d+)$/, (_, num) => `Ar-lein – ${num}`],
+  [/^All friends\s*–\s*(\d+)$/, (_, num) => `Pawb yn fy ffrindiau – ${num}`],
   [/^Today at (\d{2}:\d{2})$/, (_, time) => `Heddiw ar ${time}`],
 
   // Dates
@@ -121,6 +149,7 @@ const DYNAMIC_TRANSLATIONS = [
   [/^(\d{1,2}) Oct (\d{4})$/, (_, day, year) => `${day} Hydref ${year}`],
   [/^(\d{1,2}) Nov (\d{4})$/, (_, day, year) => `${day} Tachwedd ${year}`],
   [/^(\d{1,2}) Dec (\d{4})$/, (_, day, year) => `${day} Rhagfyr ${year}`],
+  [/^Message (.+)$/, (_, text) => `Anfon neges i ${text}`],
 ];
 
 // 3) Translation cache to avoid redundant computations
