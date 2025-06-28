@@ -40,7 +40,7 @@ const STATIC_TRANSLATIONS = {
   "You can add friends with their Discord usernames.": "Ti fedri ychwanegu ffrindiau gan ddefnyddio eu henwau defnyddwyr ar Discord",
   "Send Friend Request": "Anfon Cais Ffrind",
   "Other Places to Make Friends": "Lleoedd Arall i Gwneud Ffrindiau",
-  "Don’t have a username on hand? Check out our list of public servers that includes everything from gaming to cooking, music, anime and more.": "Does gen ti ddim enw defniddiwr i ddefnyddio? Edrychwch ar ein rhestr o weinyddion cyhoeddus sy’n cynnwys popeth o gemau i goginio, cerddoriaeth, anime a mwy.",
+  "Don’t have a username on hand? Check out our list of public servers that includes everything from gaming to cooking, music, anime and more.": "Does gen ti ddim enw defniddiwr i ddefnyddio? Edrych ar ein rhestr o weinyddion cyhoeddus sy’n cynnwys popeth o gemau i goginio, cerddoriaeth, anime a mwy.",
   "Explore Discoverable Servers": "Archwilio Gweinyddion Darganfyddadwy",
   "Discover": "Archwilio",
   "Download Apps": "Wedi Lawrlwytho Apiau",
@@ -114,7 +114,7 @@ const STATIC_TRANSLATIONS = {
 
   //    Server Creator
   "Create Your Server": "Creu Eich Gweinydd",
-  "Your server is where you and your friends hang out. Make yours and start talking.": "Eich gweinydd yw lle wyt ti'n a ti ffrindiau'n cwrdd. Creu eich rŵan!",
+  "Your server is where you and your friends hang out.\nMake yours and start talking.": "Eich gweinydd yw lle wyt ti'n a ti ffrindiau'n cwrdd. Creu eich rŵan!",
   "Create My Own": "Creu Fy Un",
   "Gaming": "Gemau",
   "Study Group": "Grŵp Astudio",
@@ -124,9 +124,15 @@ const STATIC_TRANSLATIONS = {
   "Already have an invite?": "Oes gen ti wahoddiad?",
   "Join a Server": "Ymuno â Gweinydd",
   "Enter an invite below to join an existing server": "Teipio gwahoddiad isod i ymuno â gweinydd presennol",
+  "Invite link": "Dolen gwahoddiad",
   "Invites should look like": "Dylai Gwahoddiadau Edrych Fel Hyn",
-  "Don't have an invite?": "Does gen ti ddim gwahoddiad?",
-  "Invite link": "Dolen gwahoddiad"
+  "Don’t have an invite?": "Does gen ti ddim gwahoddiad?",
+  "Check out Discoverable communities in Server Discovery.": "Edrych ar y cymunedau Darganfyddadwy mewn Archwilio Gweinydd",
+  "Back": "Yn ôl",
+  "Join Server": "Ymuno â Gweinydd",
+  
+  
+  
 
 };
 
