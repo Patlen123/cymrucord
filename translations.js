@@ -44,6 +44,16 @@ const STATIC_TRANSLATIONS = {
   "Explore Discoverable Servers": "Archwilio Gweinyddion Darganfyddadwy",
   "Discover": "Archwilio",
   "Download Apps": "Wedi Lawrlwytho Apiau",
+  "View Full Profile": "Dangos Proffil Llawn",
+  "Upload a File": "Llwytho Ffeil i Fyny",
+  "Create Poll": "Creu Pleidlais",
+  "Use Apps": "Defnyddio Apiau",
+  "Search Tenor": "Chwilio Tenor",
+  "Stickers": "Sticeri",
+  "Find the perfect sticker": "Ffeindio'r sticer perffaith",
+  "Find the perfect emoji": "Ffeindio'r emoji perffaith",
+  "Frequently Used": "Defnyddiwyd Yn Amlach",
+
 
   // Download Apps Box
   "Get Discord at Home": "Cael Discord Adre",
@@ -126,6 +136,14 @@ const STATIC_TRANSLATIONS = {
   "Email": "E-Bost",
   "Phone Number":"Rhif Ffôn",
   "Reveal": "Datgelu",
+  "Edit User Profile": "Golygu Proffil Defnyddiwr",
+  "Edit": "Golygu",
+  "Age group": "Grŵp Oedran",
+  "Unverified": "Heb ei Ddilysu",
+  "Verify": "Ddilysu",
+  "Password and Authentication": "Cyfrinair a Dilysu",
+  "Change Password": "Newid Cyfrinair",
+
 
   //    Connections
   "Connections": "Cysylltiadau",
