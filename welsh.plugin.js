@@ -1,7 +1,7 @@
 /**
  * @name WelshTranslator
- * @author YourName
- * @description Automatically translates Discord UI into Welsh using a local dictionary.
+ * @author Patlen123
+ * @description Cyfiethu Discord i'r Gymraeg gan ddefnyddio geiriadur
  * @version 1.0.0
  */
 
